@@ -66,7 +66,7 @@ export default {
 }
 </script>
 
-<template>
+<!-- <template>
    <div class="container"> 
         <Header @toggle-add-task="toggleAddTask" title="Run Tracker" :showAddTask="showAddTask" />
         <div v-if="showAddTask">
@@ -98,6 +98,72 @@ body {
   border: 5px solid white;
   padding: 30px;
   border-radius: 5px;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+</style> -->
+
+<template>
+  <div class="container"> 
+    <Header @toggle-add-task="toggleAddTask" title="Run Tracker" :showAddTask="showAddTask" />
+    <div v-if="showAddTask">
+      <AddTask @add-Task="addTask"/>
+    </div>
+    <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
+    <Test @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
+  </div>
+</template>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: orange;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 2px solid #fff;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0,);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
 }
 
 .btn {

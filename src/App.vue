@@ -70,10 +70,26 @@ export default {
 .wrapper {
   display: flex;
   justify-content: center;
-  background-color: white;
+  /* background-color: white; */
 }
 .navigation {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navigation a {
+  margin: 0 1rem;
+  color: #333;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #555;
 }
 
 .navbar {
@@ -94,6 +110,6 @@ nav {
 }
 
 main {
-  padding-top: 2rem; /* Adjust as needed for spacing below the fixed navbar */
+  padding-top: 1rem; /* Adjust as needed for spacing below the fixed navbar */
 }
 </style>

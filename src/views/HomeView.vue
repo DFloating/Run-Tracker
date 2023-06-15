@@ -32,7 +32,7 @@ export default {
 
 <template>
 <div class="home">
-    <h1>Welcome,{{ name }}</h1>
+    <h1>Welcome {{ name }}</h1>
         <div class="logo-container">
             <img class="logo pulsate" src="../assets/images/2-run-tracker-logo.jpeg" alt="logo" />
         </div>
@@ -48,10 +48,21 @@ export default {
 <style scoped>
 .home{
     text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: auto;
+    min-height: 300px;
+    border: 2px solid #fff;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0,);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 .logo-container {
   max-width: 100%;
   padding: 20px;
+  
 }
 .logo{
     max-width: 100%;
