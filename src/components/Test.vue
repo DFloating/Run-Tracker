@@ -15,9 +15,10 @@
 
 <script>
 import { db } from '../Firebase' 
-import { collection, doc, getDocs } from "firebase/firestore";
+import { collection, doc, getDocs, query, where } from "firebase/firestore";
 import { onMounted, ref } from 'vue';
-import 'firebase/auth'
+import { getAuth } from 'firebase/auth'
+
 
 export default {
     name: 'Test',
@@ -27,7 +28,16 @@ export default {
             const collectionRef = collection(db, 'calEvent');
 
             const fetchData = () => {
-            getDocs(collectionRef).then((res) => {
+              const auth = getAuth();
+              const user = auth.currentUser;
+              console.log(user)
+              if (!user) {
+                return; // Exit if user is not authenticated
+              }
+
+            const query1 = query(collectionRef, where('userId', '==', user.uid));
+              
+            getDocs(query1).then((res) => {
             const newData = res.docs.map((item) => ({
             id: item.id,
             item: item.data(),

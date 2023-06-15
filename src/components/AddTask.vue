@@ -1,5 +1,11 @@
 <script>
+import {db} from '../Firebase';
+import 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth'
+
 export default {
+  
     name: 'AddTask',
     data() {
         return {
@@ -17,21 +23,34 @@ export default {
                 alert('Please add a task')
                 return
             }
+            const auth = getAuth();
+            const user = auth.currentUser;
+            if (!user) {
+            console.log("no current user")
+            return
+            }
 
             const newTask = {
                 id: Math.floor(Math.random() * 10000),
                 text: this.text,
                 details: this.details,
                 day: this.day,
-                reminder: this.reminder
+                reminder: this.reminder,
+                userId: user.uid
             }
-            
-            this.$emit('add-task', newTask)
+            const collectionRef = collection(db, 'calEvent');
+         addDoc(collectionRef, newTask)
+            .then(() => {
+            console.log('Task added to Firestore')
+            })
+            .catch((error) => {
+            console.error('Error adding task to Firestore:', error)
+            })
 
-            this.text = ''
-            this.details = ''
-            this.day = ''
-            this.reminder = false
+        this.text = ''
+        this.details = ''
+        this.day = ''
+        this.reminder = false
         }
     }
 }
