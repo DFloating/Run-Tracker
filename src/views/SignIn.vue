@@ -34,8 +34,8 @@ export default {
       <form @submit.prevent="SignIn">
           <input type="text" placeholder="Email" v-model="email" />
           <input type="password" placeholder="Password" v-model="password" />
-          <input type="submit" value="SignIn" />
-          <button @click="register">LogIn</button>
+          <input type="submit" value="SignIn" class="signin-btn"/>
+          <!-- <button @click="register">LogIn</button> -->
           <!-- <button @click="signInWithGoogle">Sign In With Google</button> -->
           <p>Need an account? <router-link to="/register">Register here</router-link></p>
       </form>
@@ -45,6 +45,16 @@ export default {
 <style>
 .signin {
   text-align: center;
+}
+
+.signin-btn {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 </style>

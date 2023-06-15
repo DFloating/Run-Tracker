@@ -92,7 +92,7 @@ body {
 
 .container {
   max-width: 500px;
-  margin: 30px auto;
+  margin: 0 auto;
   overflow: auto;
   min-height: 300px;
   border: 5px solid white;

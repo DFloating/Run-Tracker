@@ -36,7 +36,7 @@ export default {
       <form @submit.prevent="Register">
           <input type="text" placeholder="Email" v-model="email" />
           <input type="password" placeholder="Password" v-model="password" />
-          <input type="submit" value="" />
+          <input type="submit" value="Create new account" class="register-btn" />
           <p>Have an account? <router-link to="/signin">SignIn here</router-link></p>
       </form>
     </div>
@@ -48,4 +48,13 @@ export default {
   text-align: center;
 }
 
+.register-btn {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 </style>

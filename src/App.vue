@@ -49,7 +49,7 @@ export default {
 </script>
 
 <template>
-  <header>
+  <header class="navbar">
 
     <div class="wrapper">
       <nav class="navigation">
@@ -61,26 +61,39 @@ export default {
     </div>
 
   </header>
-
+<main>
   <RouterView />
+</main>
 </template>
 
 <style>
 .wrapper {
   display: flex;
+  justify-content: center;
   background-color: white;
 }
 .navigation {
   text-align: center;
 }
 
-
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999; /* Ensure the navbar appears above other elements */
+}
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 25px;
   text-align: center;
   margin-top: 2rem;
 
+}
+
+main {
+  padding-top: 2rem; /* Adjust as needed for spacing below the fixed navbar */
 }
 </style>
