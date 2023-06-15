@@ -1,7 +1,7 @@
 <script>
 import { ref, onBeforeMount } from 'vue'
-import firebase from 'firebase';
-
+// import firebase from 'firebase/app';
+import firebase from "firebase/compat/app";
 export default {
     setup() {
         const name = ref("");
@@ -33,7 +33,10 @@ export default {
 <template>
 <div class="home">
     <h1>Welcome,{{ name }}</h1>
-    <router-link to="/feed">Visit the feed</router-link>
+    <img class="logo" src="../assets/images/2-run-tracker-logo.jpeg" />
+        <div class="feed">
+            <router-link to="/feed">Visit the feed</router-link>
+        </div>
     <br>
     <button class="Logout" @click="Logout">Logout</button>
 </div>

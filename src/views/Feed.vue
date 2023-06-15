@@ -3,6 +3,8 @@
 import Header from '../components/Header.vue'
 import Tasks from '../components/Tasks.vue'
 import AddTask from '../components/AddTask.vue'
+import Test from '../components/Test.vue'
+
 
 export default {
     name: 'App',
@@ -10,6 +12,7 @@ export default {
         Header,
         Tasks,
         AddTask,
+        Test,
     },
     data() {
         return {
@@ -18,6 +21,7 @@ export default {
         }
     },
     methods: {
+      
         toggleAddTask() {                           //hides the add task 
           this.showAddTask = !this.showAddTask
         },
@@ -57,7 +61,8 @@ export default {
                 reminder: true, 
             }
         ]
-    } 
+    }, 
+     
 }
 </script>
 
@@ -68,6 +73,7 @@ export default {
         <AddTask @add-Task="addTask"/>
         </div>
         <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
+        <Test @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
     </div>
 </template>
 
@@ -89,7 +95,7 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 5px solid white;
   padding: 30px;
   border-radius: 5px;
 }

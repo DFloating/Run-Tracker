@@ -1,7 +1,8 @@
 <script>
-import firebase from 'firebase/app';
+// import firebase from 'firebase/app';
 import{ ref } from 'vue';
 import 'firebase/auth'
+import firebase from "firebase/compat/app";
 
 export default {
   setup() {
@@ -13,7 +14,7 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value)
         .then(user => {
-          alert(user);
+          alert('user signed in');
         })
         .catch(err =>alert(err.message));
     }
@@ -46,11 +47,5 @@ export default {
 .Register {
   text-align: center;
 }
-/* @media (min-width: 1024px) {
-  .Register {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-} */
+
 </style>

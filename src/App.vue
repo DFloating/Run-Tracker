@@ -1,9 +1,14 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import firebase from 'firebase';
+import firebase from "firebase/compat/app";
+// import firebase from 'firebase/app';
 import { onBeforeMount } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+// import 'firebase/auth'
+import { auth } from './Firebase'
+import "firebase/compat/auth"
+import {db} from './Firebase'
+import { collection, addDoc } from 'firebase/firestore'
 
 export default {
   setup () {
@@ -17,8 +22,27 @@ export default {
         } else if (route.path == "/signin" || route.path == "/register") {
           router.replace('/')
         }
-      });
-    });
+      })
+    })
+  }, 
+  methods: {
+    async createUser() {
+      // 'users' collection ref
+      const colRef = collection(db, 'test')
+      // data to send
+      const dataObj = {
+        firstName: 'John',
+        lastName: 'Doe', 
+        dob: '1990'
+      }
+      //create doc and return ref to it
+      const docRef = await addDoc(colRef, dataObj)
+
+      console.log('Document was created with ID:', docRef.id)
+    }
+  }, 
+  mounted() {
+    this.createUser()
   }
 }
 
@@ -26,81 +50,37 @@ export default {
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper">
-      <nav>
+      <nav class="navigation">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/signin">SignIn</RouterLink>
         <RouterLink to="/feed">Feed</RouterLink>
         <RouterLink to="/register">Register</RouterLink>
       </nav>
     </div>
+
   </header>
 
   <RouterView />
 </template>
 
 <style>
-/* header {
-  line-height: 1.5;
-  max-height: 100vh;
-} */
+.wrapper {
+  display: flex;
+  background-color: white;
+}
+.navigation {
+  text-align: center;
+}
 
-/* .logo {
-  display: block;
-  margin: 0 auto 2rem;
-} */
+
 
 nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+
 }
-
-/* nav a.router-link-exact-active {
-  color: var(--color-text);
-} */
-
-/* nav a.router-link-exact-active:hover {
-  background-color: transparent;
-} */
-
-/* nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-} */
-
-/* nav a:first-of-type {
-  border: 0;
-} */
-
-/* @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  } */
-/* 
-  .logo {
-    margin: 0 2rem 0 0;
-  } */
-
-  /* header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  } */
-
-  /* nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-} */
 </style>

@@ -26,10 +26,11 @@ export default {
 }
 
 .task {
-  background-color: rgba(0, 0, 0, 2);
+  background-color: rgba(0, 0, 0, 3);
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  color: white;
 }
 
 .task.reminder {

@@ -1,8 +1,8 @@
 <script>
-import firebase from 'firebase/app';
+// import firebase from 'firebase/app';
 import {ref} from 'vue';
 import 'firebase/auth'
-
+import firebase from "firebase/compat/app";
 
 export default {
   // name: 'Signincomponent',
@@ -46,12 +46,5 @@ export default {
 .signin {
   text-align: center;
 }
-/* @media (min-width: 1024px) {
-  .signin {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    
-  }
-} */
+
 </style>
