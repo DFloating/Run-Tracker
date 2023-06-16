@@ -55,7 +55,7 @@ export default {
       <nav class="navigation">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/signin">SignIn</RouterLink>
-        <RouterLink to="/feed">Feed</RouterLink>
+        <RouterLink to="/feed">Tasks</RouterLink>
         <RouterLink to="/register">Register</RouterLink>
       </nav>
     </div>

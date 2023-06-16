@@ -1,17 +1,3 @@
-<template>
-
-    <div>
-    <ul>
-      <li v-for="item in list" :key="item.id">
-        <li>{{ item.item.name }}</li>
-        <p>{{ item.item.details }}</p>
-        <p>{{ item.item.start }}</p>
-        
-      </li>
-    </ul>
-  </div>
-  
-</template>
 
 <script>
 import { db } from '../Firebase' 
@@ -57,3 +43,43 @@ export default {
 };
 
 </script>
+
+
+<template>
+    
+      <div v-for="item in list" :key="item.id" :class="[item.item.reminder ? 'reminder' : '', 'item']">
+        <h3>{{ item.item.text }}
+          <i class="fas fa-times"></i>
+        </h3>
+          <p>{{ item.item.day }}</p>
+        <p>{{ item.item.details }}</p>
+
+      </div>
+
+</template>
+
+<style scoped>
+
+.fas {
+  color: red;
+}
+
+.item {
+  background-color: rgba(0, 0, 0, 3);
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.item.reminder {
+  border-left: 5px solid green;
+}
+
+.item h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+</style>

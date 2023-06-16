@@ -34,10 +34,11 @@ export default {
 <div class="home">
     <h1>Welcome {{ name }}</h1>
         <div class="logo-container">
-            <img class="logo pulsate" src="../assets/images/2-run-tracker-logo.jpeg" alt="logo" />
+            <img class="logo pulsate" src="../assets/images/pngwing.com.png" alt="logo" />
         </div>
 
         <div class="feed">
+          <p>Welcome to Run Tracker! An application for avid runners to keep track of workouts that need to be completed for their training block</p>
             <router-link to="/feed">Visit the feed</router-link>
         </div>
     <br>
@@ -63,6 +64,11 @@ export default {
   max-width: 100%;
   padding: 20px;
   
+}
+
+p{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .logo{
     max-width: 100%;

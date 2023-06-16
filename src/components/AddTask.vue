@@ -59,36 +59,38 @@ export default {
 
 
 <template>
-    <form @submit="onSubmit" class="add-form">
-      <div class="form-control">
-        <label>Type</label>
-        <input type="text" v-model="text" name="text" placeholder="Long, Tempo, Speed or Recovery" />
-      </div>
-      <div class="form-control">
-        <label>Details</label>
-        <input
-          type="text"
-          v-model="details"
-          name="details"
-          placeholder="Add Details of Run"
-        />
-      </div>
-      <div class="form-control">
-        <label>Day & Time</label>
-        <input
-          type="text"
-          v-model="day"
-          name="day"
-          placeholder="Add Day & Time"
-        />
-      </div>
-      <div class="form-control form-control-check">
-        <label>Set Reminder</label>
-        <input type="checkbox" v-model="reminder" name="reminder" />
-      </div>
-  
-      <input type="submit" value="Add Run" class="btn btn-block" />
-    </form>
+  <div class="form-container">
+      <form @submit="onSubmit" class="add-form">
+        <div class="form-control">
+          <label>Type</label>
+          <input type="text" v-model="text" name="text" placeholder="Long, Tempo, Speed or Recovery" />
+        </div>
+        <div class="form-control">
+          <label>Details</label>
+          <input
+            type="text"
+            v-model="details"
+            name="details"
+            placeholder="Add Details of Run"
+          />
+        </div>
+        <div class="form-control">
+          <label>Day & Time</label>
+          <input
+            type="text"
+            v-model="day"
+            name="day"
+            placeholder="Add Day & Time"
+          />
+        </div>
+        <div class="form-control form-control-check">
+          <label>Set Reminder</label>
+          <input type="checkbox" v-model="reminder" name="reminder" />
+        </div>
+    
+        <input type="submit" value="Add Run" class="btn btn-block" />
+      </form>
+    </div>
   </template>
 
 <style scoped>
@@ -99,6 +101,7 @@ export default {
 .form-control {
   margin: 20px 0;
 }
+
 
 .form-control label {
   display: block;
