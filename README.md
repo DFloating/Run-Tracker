@@ -1,29 +1,15 @@
-# Run-Calender
+# Run-Tracker
 
-This template should help get you started developing with Vue 3 in Vite.
+An application developed for avid runners to enter a log of the workouts from their training plan.
 
-## Recommended IDE Setup
+## Technologies Used
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Vue 3
+- Firebase
 
-## Customize configuration
+## To be updated
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Deployment
 
-## Project Setup
+## Bugs to be fixed
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```

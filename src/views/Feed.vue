@@ -16,7 +16,7 @@ export default {
     },
     data() {
         return {
-            tasks: [],           //lifecycle method
+            tasks: [],           
             showAddTask: false
         }
     },
